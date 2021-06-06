@@ -19,6 +19,7 @@ structopt = "0.3"
 # CLInvoice
 clinvoice_adapter = {path='crates/adapters/clinvoice_adapter', version="0.8"}
 clinvoice_adapter_bincode = {path='crates/adapters/clinvoice_adapter_bincode', optional=true, version="0.6"}
+clinvoice_adapter_postgres = {path='crates/adapters/clinvoice_adapter_postgres', optional=true, version="0.1"}
 clinvoice_config = {path='crates/clinvoice_config', version="0.2"}
 clinvoice_data = {path='crates/clinvoice_data', version="0.5"}
 clinvoice_error = {path='crates/clinvoice_error', version="0.2"}
@@ -39,11 +40,13 @@ serde_yaml = "0.8"
 [features]
 default = ["bincode"]
 bincode = ["clinvoice_adapter_bincode"]
+postgres = ["clinvoice_adapter_postgres"]
 
 [workspace]
 members = [
 	"crates/adapters/clinvoice_adapter",
 	"crates/adapters/clinvoice_adapter_bincode",
+	"crates/adapters/clinvoice_adapter_postgres",
 	"crates/clinvoice_config",
 	"crates/clinvoice_data",
 	"crates/clinvoice_error",
