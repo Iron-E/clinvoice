@@ -23,6 +23,6 @@ mod store;
 pub use
 {
 	adapters::Adapters,
-	error::Error,
+	error::{Error, Result},
 	store::Store,
 };
